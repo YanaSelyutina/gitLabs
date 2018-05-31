@@ -23,4 +23,6 @@ for(i = 0; i < numButtons.length; i++){
 	}
 }
 
-var divButton  = document.getElementById('div');
+var divButton = document.getElementById('div');
+var mulButton = document.getElementById('mul');
+var subButton = document.getElementById('sub');
