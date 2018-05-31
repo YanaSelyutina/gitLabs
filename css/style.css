@@ -1,6 +1,5 @@
 
 .led{
-	/*width: 150px;*/
 	height: 100px;
 	background: #eee;
 	margin: 15px 0;
@@ -10,5 +9,5 @@
 }
 
 .NumButtons {
-	width: 300px;
+	width: 400px;
 }
