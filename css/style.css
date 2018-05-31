@@ -1,4 +1,14 @@
-
+*{
+	box-sizing: border-box;
+}
+body{
+	background: url("../img/additionBckg.png") no-repeat 120% 20%, url("../img/background.jpg");
+	background-size:700px, cover;
+}
+.wrapper{
+	width: 900px;
+	margin: 0 auto;
+}
 .led{
 	height: 100px;
 	background: #eee;
@@ -11,11 +21,18 @@
 
 .NumButtons {
 	width: 450px;
+	margin: 0 auto;
 }
+
 .NumButtons button{
 	background: #efefef;
+	width: 13%;
 	margin: 5px;
 	padding: 5px;
-	border: 1px solid #000;
+	border: 1px solid #555;
 	border-radius: 5px;
+	box-shadow: 1px 3px 8px 0px #fff;
+}
+.NumButtons button:active{
+	box-shadow: 1px 3px 3px 0px #fff;
 }
