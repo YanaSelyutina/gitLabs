@@ -7,6 +7,7 @@ var OperationEnum = {
 	SQRT: 5
 }
 
+
 var input = false; //Это главная переменная.
 var CurrentOp = OperationEnum.NONE;
 var numButtons = document.getElementsByClassName('numButton');
