@@ -7,7 +7,7 @@ var OperationEnum = {
 	SQRT: 5
 }
 
-var input = false;
+var input = false; //This is main variable
 var CurrentOp = OperationEnum.NONE;
 var numButtons = document.getElementsByClassName('numButton');
 var Led = document.getElementById('led');
