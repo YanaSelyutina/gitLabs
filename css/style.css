@@ -10,12 +10,12 @@
 }
 
 .NumButtons {
-	width: 400px;
+	width: 450px;
 }
 .NumButtons button{
-	background: none;
+	background: #efefef;
 	margin: 5px;
 	padding: 5px;
 	border: 1px solid #000;
-	
+	border-radius: 5px;
 }
