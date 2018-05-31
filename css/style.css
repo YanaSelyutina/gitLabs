@@ -6,8 +6,16 @@
 	padding: 20px;
 	font-size: 3em;
 	font-family: monospace;
+	border-radius: 10px;
 }
 
 .NumButtons {
 	width: 400px;
+}
+.NumButtons button{
+	background: none;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid #000;
+	
 }
