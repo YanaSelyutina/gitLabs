@@ -23,4 +23,4 @@ for(i = 0; i < numButtons.length; i++){
 	}
 }
 
-document.getElementById('')
+var divButton  = document.getElementById('div');
