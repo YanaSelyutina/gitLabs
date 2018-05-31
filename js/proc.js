@@ -23,7 +23,16 @@ for(i = 0; i < numButtons.length; i++){
 	}
 }
 
+var sqrtButton = document.getElementById('sqrt');
+var sinButton = document.getElementById('sin');
+var cosButton = document.getElementById('cos');
+var logButton = document.getElementById('log');
+var mdivButton = document.getElementById('mdiv');
+var addButton = document.getElementById('add');
 var divButton = document.getElementById('div');
 var mulButton = document.getElementById('mul');
+var sqrButton = document.getElementById('sqr');
 var subButton = document.getElementById('sub');
-var addButton = document.getElementById('add');
+var equallyButton = document.getElementById('equally');
+var CButton = document.getElementById("c");
+var CEButton = document.getElementById("ce");
