@@ -1,3 +1,7 @@
+/**
+*@var object $OperationEnum объект-перечисление всех операций
+* в калькуляторе $openum
+*/
 var OperationEnum = {
 	NONE: 0,
 	DIV: 1,
@@ -11,17 +15,50 @@ var OperationEnum = {
 	EXP: 9,
 	SQR: 10
 }
-
+/**
+*@var float $f первое число для вычислений
+*/
 var f = 0.;
+/**
+*@var float $s второе число для вычислений
+*/
 var s = 0.;
+/**
+*@var float $res результат вычислений
+*/
 var res = 0.;
-var input = false; //Это главная переменная.
+/**
+*@var bool $input флаг, показывающий,
+* что начался ввод следующего числа
+*/
+var input = false;
+/**
+*@var bool $dotInput флаг, показывающий,
+* можно ли использовать точку при вводе.
+*/
 var dotInput = true;
+/**
+*@var int $CurrentOp текущая операция.
+* Задается из перечисления OperationEnum @link $openum
+*/
 var CurrentOp = OperationEnum.NONE;
+/**
+*@var object $numButtons получает кнопки с цифрами
+*/
 var numButtons = document.getElementsByClassName('numButton');
+/**
+*@var object $Led первое число для вычислений
+*/
 var Led = document.getElementById('led');
+
+/**
+* Устанавливает обработчик нажатия
+*/
 for(i = 0; i < numButtons.length; i++){
 	var t = numButtons[i];
+	/**
+	* Если {@link $input} == false, начинаем вводить новое число
+	*/
 	t.onclick = function(){
 		if(input === false){
 			Led.innerText = this.innerText;
@@ -32,6 +69,14 @@ for(i = 0; i < numButtons.length; i++){
 			Led.innerText += this.innerText;
 	}
 }
+
+/**
+* Выполняет общие операции для бинарных операторов
+* Если уже была установлена операция, ее выполнят
+* и начнется ожидание ввода числа.
+* Иначе нужно заполнить оба числа {@link $f} {@link $s}
+*@return none
+*/
 function binaryOP(){
 	if(CurrentOp !== OperationEnum.NONE){
 		s = +Led.innerText;
@@ -42,6 +87,12 @@ function binaryOP(){
 	}
 	input = false;
 }
+
+/**
+* В зависимости от текущей операции {@link $CurrentOp}
+* выполняется та, или иная ветка, сбрасывается ввод.
+*@return none
+*/
 function exec(){
 	switch(CurrentOp){
 		case OperationEnum.SQRT:
@@ -80,7 +131,10 @@ function exec(){
 	CurrentOp = OperationEnum.NONE;
 	input = false;
 }
-
+/**
+* набор управляющих кнопок
+@var object $opButtons
+*/
 var sqrtButton = document.getElementById('sqrt');
 var sinButton = document.getElementById('sin');
 var cosButton = document.getElementById('cos');
@@ -96,6 +150,10 @@ var CButton = document.getElementById("c");
 var CEButton = document.getElementById("ce");
 var dotButton = document.getElementById("dot");
 
+/**
+* обработчики нажатия на управляющие кнопки.
+*@return none
+*/
 sqrtButton.onclick = function(){
 	CurrentOp = OperationEnum.SQRT;
 	f = +Led.innerText;
@@ -160,6 +218,12 @@ CEButton.onclick = function(){
 	f = s = 0.;
 }
 
+/**
+* Кнопка точки похожа на цифровую кнопку
+* но она должна вводиться один раз
+* во время ввода числа
+*@return none
+*/
 dotButton.onclick = function(){
 	if(!dotInput) return;
 	if(input === false){
