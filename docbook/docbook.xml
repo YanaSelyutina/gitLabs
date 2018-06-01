@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<article xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>Калькулятор</title>
+        <author>
+            <orgname>ДонНТУ</orgname>
+            <address>
+<city>Донецк 2018</city>
+           </address>
+            <email>selyutina1998@gmail.com</email>
+        </author>
+        <author>
+            <personname><firstname>Яна</firstname><surname>Селютина</surname></personname>
+        </author>
+    </info>
+    <sect1>
+        <title>О программе</title>
+        <para>Программа калькулятор - кроссплатформенное математическое приложение. Это приложение
+            предназначено для простых вычислений.</para>
+        <informalfigure>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/img1.jpg" align="center" scale="50"
+                        annotations="Внешний вид "/>
+                </imageobject>
+            </mediaobject>
+            <para>Для того, что бы начать пользоваться калькулятором, клонируйте репозиторий <link
+                    xlink:href="https://github.com/YanaSelyutina/gitLabs"/>. После этого откройте в
+                браузере файл index.html</para>
+        </informalfigure>
+    </sect1>
+</article>
