@@ -43,11 +43,11 @@ var dotInput = true;
 */
 var CurrentOp = OperationEnum.NONE;
 /**
-*@var object $numButtons получает кнопки с цифрами
+*@var object $numButtons содержит блоки кнопок с цифрами
 */
 var numButtons = document.getElementsByClassName('numButton');
 /**
-*@var object $Led первое число для вычислений
+*@var object $Led div для записи числа
 */
 var Led = document.getElementById('led');
 
