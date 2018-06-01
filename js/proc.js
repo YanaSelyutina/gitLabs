@@ -38,18 +38,18 @@ var input = false;
 */
 var dotInput = true;
 /**
-*@var int $CurrentOp текущая операция.
+*@var int $currentOp текущая операция.
 * Задается из перечисления OperationEnum @link $openum
 */
-var CurrentOp = OperationEnum.NONE;
+var currentOp = OperationEnum.NONE;
 /**
 *@var object $numButtons содержит блоки кнопок с цифрами
 */
 var numButtons = document.getElementsByClassName('numButton');
 /**
-*@var object $Led div для записи числа
+*@var object $led div для записи числа
 */
-var Led = document.getElementById('led');
+var led = document.getElementById('led');
 
 /**
 * Устанавливает обработчик нажатия
@@ -61,12 +61,12 @@ for(i = 0; i < numButtons.length; i++){
 	*/
 	t.onclick = function(){
 		if(input === false){
-			Led.innerText = this.innerText;
+			led.innerText = this.innerText;
 			input = true;
 			dotInput = true;
 		}
 		else
-			Led.innerText += this.innerText;
+			led.innerText += this.innerText;
 	}
 }
 
@@ -78,23 +78,23 @@ for(i = 0; i < numButtons.length; i++){
 *@return none
 */
 function binaryOP(){
-	if(CurrentOp !== OperationEnum.NONE){
-		s = +Led.innerText;
+	if(currentOp !== OperationEnum.NONE){
+		s = +led.innerText;
 		exec();
 	}
 	else{
-		f = s = +Led.innerText;
+		f = s = +led.innerText;
 	}
 	input = false;
 }
 
 /**
-* В зависимости от текущей операции {@link $CurrentOp}
+* В зависимости от текущей операции {@link $currentOp}
 * выполняется та, или иная ветка, сбрасывается ввод.
 *@return none
 */
 function exec(){
-	switch(CurrentOp){
+	switch(currentOp){
 		case OperationEnum.SQRT:
 			res = Math.sqrt(f);
 			break;
@@ -126,9 +126,9 @@ function exec(){
 			res = f - s;
 			break;
 	}
-	Led.innerText = res;
+	led.innerText = res;
 	f = res;
-	CurrentOp = OperationEnum.NONE;
+	currentOp = OperationEnum.NONE;
 	input = false;
 }
 /**
@@ -155,66 +155,66 @@ var dotButton = document.getElementById("dot");
 *@return none
 */
 sqrtButton.onclick = function(){
-	CurrentOp = OperationEnum.SQRT;
-	f = +Led.innerText;
+	currentOp = OperationEnum.SQRT;
+	f = +led.innerText;
 	exec();
 }
 
 sinButton.onclick = function(){
-	CurrentOp = OperationEnum.SIN;
-	f = +Led.innerText;
+	currentOp = OperationEnum.SIN;
+	f = +led.innerText;
 	exec();
 }
 cosButton.onclick = function(){
-	CurrentOp = OperationEnum.COS;
-	f = +Led.innerText;
+	currentOp = OperationEnum.COS;
+	f = +led.innerText;
 	exec();
 }
 logButton.onclick = function(){
-	CurrentOp = OperationEnum.LOG;
-	f = +Led.innerText;
+	currentOp = OperationEnum.LOG;
+	f = +led.innerText;
 	exec();
 }
 expButton.onclick = function(){
-	CurrentOp = OperationEnum.EXP;
-	f = +Led.innerText;
+	currentOp = OperationEnum.EXP;
+	f = +led.innerText;
 	exec();
 }
 addButton.onclick = function(){
 	binaryOP();
-	CurrentOp = OperationEnum.ADD;
+	currentOp = OperationEnum.ADD;
 }
 divButton.onclick = function(){
 	binaryOP();
-	CurrentOp = OperationEnum.DIV;
+	currentOp = OperationEnum.DIV;
 }
 mulButton.onclick = function(){
 	binaryOP();
-	CurrentOp = OperationEnum.MUL;
+	currentOp = OperationEnum.MUL;
 }
 sqrButton.onclick = function(){
-	CurrentOp = OperationEnum.SQR;
-	f = +Led.innerText;
+	currentOp = OperationEnum.SQR;
+	f = +led.innerText;
 	exec();
 }
 subButton.onclick = function(){
 	
-	CurrentOp = OperationEnum.SUB;
+	currentOp = OperationEnum.SUB;
 }
 
 equallyButton.onclick = function(){
-	if(CurrentOp == OperationEnum.NONE) return;
-	s = + Led.innerText;
+	if(currentOp == OperationEnum.NONE) return;
+	s = + led.innerText;
 	exec();
 }
 CButton.onclick = function(){
-	Led.innerText = 0;
+	led.innerText = 0;
 	input = false;
 }
 CEButton.onclick = function(){
-	Led.innerText = 0;
+	led.innerText = 0;
 	input = false;
-	CurrentOp = OperationEnum.NONE;
+	currentOp = OperationEnum.NONE;
 	f = s = 0.;
 }
 
@@ -227,11 +227,11 @@ CEButton.onclick = function(){
 dotButton.onclick = function(){
 	if(!dotInput) return;
 	if(input === false){
-			Led.innerText = "0.";
+			led.innerText = "0.";
 			input = true;
 			dotInput = true;
 		}
 		else
-			Led.innerText += ".";
+			led.innerText += ".";
 	dotInput = false;
 }
