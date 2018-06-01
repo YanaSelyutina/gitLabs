@@ -126,6 +126,7 @@ function exec(){
 			res = f - s;
 			break;
 	}
+	
 	led.innerText = res;
 	f = res;
 	currentOp = OperationEnum.NONE;
@@ -165,38 +166,46 @@ sinButton.onclick = function(){
 	f = +led.innerText;
 	exec();
 }
+
 cosButton.onclick = function(){
 	currentOp = OperationEnum.COS;
 	f = +led.innerText;
 	exec();
 }
+
 logButton.onclick = function(){
 	currentOp = OperationEnum.LOG;
 	f = +led.innerText;
 	exec();
 }
+
 expButton.onclick = function(){
 	currentOp = OperationEnum.EXP;
 	f = +led.innerText;
 	exec();
 }
+
 addButton.onclick = function(){
 	binaryOP();
 	currentOp = OperationEnum.ADD;
 }
+
 divButton.onclick = function(){
 	binaryOP();
 	currentOp = OperationEnum.DIV;
 }
+
 mulButton.onclick = function(){
 	binaryOP();
 	currentOp = OperationEnum.MUL;
 }
+
 sqrButton.onclick = function(){
 	currentOp = OperationEnum.SQR;
 	f = +led.innerText;
 	exec();
 }
+
 subButton.onclick = function(){
 	
 	currentOp = OperationEnum.SUB;
@@ -207,10 +216,12 @@ equallyButton.onclick = function(){
 	s = + led.innerText;
 	exec();
 }
+
 CButton.onclick = function(){
 	led.innerText = 0;
 	input = false;
 }
+
 CEButton.onclick = function(){
 	led.innerText = 0;
 	input = false;
