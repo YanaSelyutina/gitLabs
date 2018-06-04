@@ -60,13 +60,13 @@ for(i = 0; i < numButtons.length; i++){
 	* Если {@link $input} == false, начинаем вводить новое число
 	*/
 	t.onclick = function(){
-		if(input === false){
-			led.innerText = this.innerText;
-			input = true;
-			dotInput = true;
+	if(input === false){
+	led.innerText = this.innerText;
+	input = true;
+	dotInput = true;
 		}
-		else
-			led.innerText += this.innerText;
+	else
+	led.innerText += this.innerText;
 	}
 }
 
@@ -77,13 +77,13 @@ for(i = 0; i < numButtons.length; i++){
 * Иначе нужно заполнить оба числа {@link $f} {@link $s}
 *@return none
 */
-function binaryOP(){
-	if(currentOp !== OperationEnum.NONE){
-		s = +led.innerText;
-		exec();
+   function binaryOP(){
+   if(currentOp !== OperationEnum.NONE){
+    s = +led.innerText;
+	exec();
 	}
 	else{
-		f = s = +led.innerText;
+	f = s = +led.innerText;
 	}
 	input = false;
 }
@@ -93,38 +93,38 @@ function binaryOP(){
 * выполняется та, или иная ветка, сбрасывается ввод.
 *@return none
 */
-function exec(){
-	switch(currentOp){
-		case OperationEnum.SQRT:
-			res = Math.sqrt(f);
-			break;
-		case OperationEnum.SIN:
-			res = Math.sin(f);
-			break;
-		case OperationEnum.COS:
-			res = Math.cos(f);
-			break;
-		case OperationEnum.LOG:
-			res = Math.log(f);
-			break;
-		case OperationEnum.EXP:
-			res = Math.exp(f);
-			break;
-		case OperationEnum.ADD:
-			res = f+s;
-			break;
-		case OperationEnum.DIV:
-			res = f/s;
-			break;
-		case OperationEnum.MUL:
-			res = f*s;
-			break;
-		case OperationEnum.SQR:
-			res = f*f;
-			break;
-		case OperationEnum.SUB:
-			res = f - s;
-			break;
+   function exec(){
+   switch(currentOp){
+   case OperationEnum.SQRT:
+   res = Math.sqrt(f);
+   break;
+   case OperationEnum.SIN:
+   res = Math.sin(f);
+   break;
+   case OperationEnum.COS:
+   res = Math.cos(f);
+   break;
+   case OperationEnum.LOG:
+   res = Math.log(f);
+   break;
+   case OperationEnum.EXP:
+   res = Math.exp(f);
+   break;
+   case OperationEnum.ADD:
+   res = f+s;
+   break;
+   case OperationEnum.DIV:
+   res = f/s;
+   break;
+   case OperationEnum.MUL:
+   res = f*s;
+   break;
+  case OperationEnum.SQR:
+  res = f*f;
+  break;
+  case OperationEnum.SUB:
+  res = f - s;
+  break;
 	}
 	
 	led.innerText = res;
@@ -147,8 +147,8 @@ var mulButton = document.getElementById('mul');
 var sqrButton = document.getElementById('sqr');
 var subButton = document.getElementById('sub');
 var equallyButton = document.getElementById('equally');
-var CButton = document.getElementById("c");
-var CEButton = document.getElementById("ce");
+var cButton = document.getElementById("c");
+var ceButton = document.getElementById("ce");
 var dotButton = document.getElementById("dot");
 
 /**
@@ -208,11 +208,12 @@ sqrButton.onclick = function(){
 
 subButton.onclick = function(){
 	
-	currentOp = OperationEnum.SUB;
+currentOp = OperationEnum.SUB;
 }
 
 equallyButton.onclick = function(){
-	if(currentOp == OperationEnum.NONE) return;
+	if(currentOp == OperationEnum.NONE) 
+        return;
 	s = + led.innerText;
 	exec();
 }
@@ -236,13 +237,13 @@ CEButton.onclick = function(){
 *@return none
 */
 dotButton.onclick = function(){
-	if(!dotInput) return;
+	if(!dotInput) 
+        return;
 	if(input === false){
-			led.innerText = "0.";
-			input = true;
-			dotInput = true;
-		}
-		else
-			led.innerText += ".";
-	dotInput = false;
-}
+	    led.innerText = "0.";
+	    input = true;
+        dotInput = true;
+	}else{
+        led.innerText += ".";
+	    dotInput = false;
+    }
