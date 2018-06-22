@@ -89,7 +89,7 @@ function binaryOP() {
 }
 
 /**
- * В зависимости от текущей операции {@link $currentOp}
+ * В зависимости от текущей операции {@link currentOp}
  * выполняется та, или иная ветка, сбрасывается ввод.
  *@return none
  */
@@ -133,26 +133,79 @@ function exec() {
 }
 
 /**
- * набор управляющих кнопок
- @let object $opButtons
+ * кнопка для вычисления корня из числа
+ @let object sqrtButton
  */
 let sqrtButton = document.getElementById('sqrt');
+/**
+ * кнопка для вычисления синуса
+ @let object sinButton
+ */
 let sinButton = document.getElementById('sin');
+/**
+ * кнопка для вычисления косинуса
+ @let object cosButton
+ */
 let cosButton = document.getElementById('cos');
+/**
+ * кнопка для вычисления логарифма
+ @let object logButton
+ */
 let logButton = document.getElementById('log');
-let expButton = document.getElementById('exp');
-let addButton = document.getElementById('add');
-let divButton = document.getElementById('div');
-let mulButton = document.getElementById('mul');
-let sqrButton = document.getElementById('sqr');
-let subButton = document.getElementById('sub');
-let equallyButton = document.getElementById('equally');
-let cButton = document.getElementById("c");
-let CEButton = document.getElementById("ce");
-let dotButton = document.getElementById("dot");
+/**
+ * кнопка для вычисления  экспаненты
+ @let object expButton
+ */
+let expButton = document.getElementById('exp');//экспанента
+/**
+ * кнопка для вычисления суммы
+ @let object addButton
+ */
+let addButton = document.getElementById('add');//сумма
+/**
+ * кнопка для деления
+ @let object divButton
+ */
+let divButton = document.getElementById('div');//деление
+/**
+ * кнопка для умножения
+ @let object mulButton
+ */
+let mulButton = document.getElementById('mul');//умножение
+/**
+ * кнопка для возведения в квадрат
+ @let object sqrButton
+ */
+let sqrButton = document.getElementById('sqr');//возведение в квадрат
+/**
+ * кнопка для  вычитания
+ @let object subButton
+ */
+let subButton = document.getElementById('sub');//вычитание
+/**
+ * кнопка для  равно
+ @let object equallyButton
+ */
+let equallyButton = document.getElementById('equally');//равно
+/**
+ * кнопка для удаления всех элементов
+ @let object cButton
+ */
+let cButton = document.getElementById("c");//удалить все
+/**
+ * кнопка для  удаления одного элемента
+ @let object CEButton
+ */
+let CEButton = document.getElementById("ce");//удалить один элемент
+/**
+ * кнопка для точки
+ @let object dotButton
+ */
+let dotButton = document.getElementById("dot");//точка
 
 /**
- * обработчики нажатия на управляющие кнопки.
+ * функция для вычисления корня из числа
+ *@function sgrButton.onclick
  *@return none
  */
 sqrtButton.onclick = function () {
@@ -160,58 +213,117 @@ sqrtButton.onclick = function () {
     f = +led.innerText;
     exec();
 };
-
+/**
+ * функция для вычисления синуса
+ *@function sinButton.onclick
+ *@return none
+ */
 sinButton.onclick = function () {
     currentOp = operationEnum.SIN;
     f = +led.innerText;
     exec();
 };
+/**
+ * функция для вычисления косинуса
+ *@function cosButton.onclick
+ *@return none
+ */
 cosButton.onclick = function () {
     currentOp = operationEnum.COS;
     f = +led.innerText;
     exec();
 };
+/**
+ * функция для вычисления логарифма
+ *@function LogButton.onclick
+ *@return none
+ */
 logButton.onclick = function () {
     currentOp = operationEnum.LOG;
     f = +led.innerText;
     exec();
 };
+/**
+ * функция для вычисления экспаннента
+ *@function expButton.onclick
+ *@return none
+ */
 expButton.onclick = function () {
     currentOp = operationEnum.EXP;
     f = +led.innerText;
     exec();
 };
+/**
+ * функция для вычисления суммы
+ *@function addButton.onclick
+ *@return none
+ */
 addButton.onclick = function () {
     binaryOP();
     currentOp = operationEnum.ADD;
 };
+/**
+ * функция для деления
+ *@function divButton.onclick
+ *@return none
+ */
 divButton.onclick = function () {
     binaryOP();
     currentOp = operationEnum.DIV;
 };
+/**
+ * функция для умножения
+ *@function mulButton.onclick
+ *@return none
+ */
 mulButton.onclick = function () {
     binaryOP();
     currentOp = operationEnum.MUL;
 };
+/**
+ * функция для возведения в квадрат
+ *@function sgrButton.onclick
+ *@return none
+ */
 sqrButton.onclick = function () {
     currentOp = operationEnum.SQR;
     f = +led.innerText;
     exec();
 };
+/**
+ * функция для вычитания
+ *@function subButton.onclick
+ *@return none
+ */
 subButton.onclick = function () {
 
     currentOp = operationEnum.SUB;
 };
+/**
+ * функция для равно
+ *@function eguallyButton.onclick
+ *@return none
+ */
 
 equallyButton.onclick = function () {
     if (currentOp === operationEnum.NONE) return;
     s = +led.innerText;
     exec();
 };
+/**
+ * функция для удаления всех элементов
+ *@function cButton.onclick
+ *@return none
+ */
 cButton.onclick = function () {
     led.innerText = 0;
     input = false;
 };
+/**
+ * функция для удаления одного элемента
+ *@function CEBButton.onclick
+ *@return none
+ */
 CEButton.onclick = function () {
     led.innerText = 0;
     input = false;
@@ -223,6 +335,7 @@ CEButton.onclick = function () {
  * Кнопка точки похожа на цифровую кнопку
  * но она должна вводиться один раз
  * во время ввода числа
+ * @function dotButton.onclick
  *@return none
  */
 dotButton.onclick = function () {
